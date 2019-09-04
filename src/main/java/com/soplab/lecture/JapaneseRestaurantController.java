@@ -2,14 +2,12 @@ package com.soplab.lecture;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootApplication
 @RestController
@@ -29,6 +27,19 @@ public class JapaneseRestaurantController {
     @RequestMapping(value="/menu", method = RequestMethod.GET)
     public List<Menu> getAllMenu() {
         return jpMenu;
+    }
+
+    @RequestMapping(value="/addmenu", method = RequestMethod.POST)
+    public Menu addMenu(@RequestBody Map<String, String> body) {
+        GetMenuType menuType = new GetMenuType();
+        String newMenuType = body.get("type");
+        Menu newMenu = menuType.getType(newMenuType);
+        newMenu.name = body.get("name");
+        newMenu.price = Double.parseDouble(body.get("price"));
+        newMenu.amount = Integer.parseInt(body.get("amount"));
+        newMenu.foodId = body.get("foodId");
+        jpMenu.add(newMenu);
+        return newMenu;
     }
 
     @RequestMapping(value = "/getMenu/{id}", method = RequestMethod.GET)
