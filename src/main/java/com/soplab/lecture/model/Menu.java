@@ -1,4 +1,4 @@
-package com.soplab.lecture;
+package com.soplab.lecture.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement

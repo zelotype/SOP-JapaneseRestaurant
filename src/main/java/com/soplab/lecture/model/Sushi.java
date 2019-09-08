@@ -1,4 +1,4 @@
-package com.soplab.lecture;
+package com.soplab.lecture.model;
 
 public class Sushi extends Menu{
 

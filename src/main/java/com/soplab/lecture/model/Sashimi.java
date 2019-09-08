@@ -1,4 +1,4 @@
-package com.soplab.lecture;
+package com.soplab.lecture.model;
 
 public class Sashimi extends Menu {
     int amountOfFish;

@@ -1,4 +1,8 @@
-package com.soplab.lecture;
+package com.soplab.lecture.factory;
+
+import com.soplab.lecture.model.Menu;
+import com.soplab.lecture.model.Sashimi;
+import com.soplab.lecture.model.Sushi;
 
 public class GetMenuType {
     String menuType;
