@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
 @RestController
-public class JapaneseRestaurantApp {
+public class JapaneseRestaurantController {
     public static void main(String[] args) {
 
-        SpringApplication.run(JapaneseRestaurantApp.class, args);
+        SpringApplication.run(JapaneseRestaurantController.class, args);
 
     }
 }
