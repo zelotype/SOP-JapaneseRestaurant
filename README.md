@@ -45,7 +45,7 @@ Nothing
 <b>Method:</b> POST <br>
 <b>Request:</b> 
 ```
-{
+    {
         "name": "uni",
         "price": 9.8989898E7,
         "amount": 1500,
@@ -107,11 +107,9 @@ Nothing
 <b>Method:</b> GET <br>
 <b>Request:</b> How many that you want to buy 
 ```
-[
-    {
-        "amount": 5
-    }
-]
+   {
+       "amount": 5
+   }
 ```
 <b>Response:</b> 
 ```
