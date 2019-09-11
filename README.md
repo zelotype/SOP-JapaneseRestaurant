@@ -50,7 +50,7 @@ Nothing
         "price": 9.8989898E7,
         "amount": 1500,
         "type": "mollesca"
-    },
+    }
 ```
 <b>Response:</b> 
 ```
