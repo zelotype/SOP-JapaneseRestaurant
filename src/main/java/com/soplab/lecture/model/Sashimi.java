@@ -23,7 +23,7 @@ public class Sashimi implements Serializable {
 
     @Id
     @GeneratedValue()
-    private long id;
+    private int id;
 
     public Sashimi(String name, double price, int amount, String type) {
         this.name = name;
@@ -66,11 +66,11 @@ public class Sashimi implements Serializable {
         this.type = type;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 }

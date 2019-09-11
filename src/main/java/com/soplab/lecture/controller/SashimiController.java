@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = "Sashimi")
+@RequestMapping(value = "sashimi")
 public class SashimiController {
 
     private final SashimiService SashimiService;
@@ -31,23 +31,18 @@ public class SashimiController {
     }
 
     @GetMapping(value = "/menu/{id}")
-    public Sashimi getFood(@PathVariable String id) {
+    public Sashimi getFood(@PathVariable int id) {
         return SashimiService.getMenu(id);
     }
 
     @DeleteMapping(value = "/delete/{id}")
-    public ResponseEntity<List<Sashimi>> deleteFood(@PathVariable String id) {
+    public ResponseEntity<List<Sashimi>> deleteFood(@PathVariable int id) {
         SashimiService.deleteMenu(id);
         return new ResponseEntity<List<Sashimi>>(SashimiService.getAllMenu(),HttpStatus.OK);
     }
 
-    @PostMapping(value = "/update/{id}")
-    public Sashimi update(@PathVariable String id, @RequestBody Sashimi sashimi) {
-        return SashimiService.updateMenu(sashimi, id);
-    }
-
     @PostMapping(value = "/buy/{id}")
-    public Sashimi buyFoods(@PathVariable String id, @RequestBody Map<String, Integer> body) {
+    public Sashimi buyFoods(@PathVariable int id, @RequestBody Map<String, Integer> body) {
         // TODO If there is no "amount" in request body?
         return SashimiService.buyFoods(SashimiService.getMenu(id), body.get("amount"));
     }

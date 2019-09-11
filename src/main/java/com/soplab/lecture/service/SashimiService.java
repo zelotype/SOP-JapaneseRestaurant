@@ -27,7 +27,7 @@ public class SashimiService {
         return SashimiRepository.findAll();
     }
 
-    public Sashimi getMenu(String id) {
+    public Sashimi getMenu(int id) {
         return SashimiRepository
                 .findById(id)
                 .orElseThrow(() -> new RuntimeException("No such food with id"));
@@ -36,17 +36,12 @@ public class SashimiService {
     public Sashimi addMenu(Sashimi sashimi, String sashimiType) {
         Sashimi newSashimi = SashimiFactory.getType(sashimiType);
         newSashimi = SerializationUtils.clone(sashimi);
+        newSashimi.setId(newSashimi.getId());
         return SashimiRepository.save(newSashimi);
     }
 
-    public void deleteMenu(String id) {
+    public void deleteMenu(int id) {
         SashimiRepository.deleteById(id);
-    }
-
-    public Sashimi updateMenu(Sashimi newSashimi, String id) {
-        Sashimi thisSashimi = this.getMenu(id);
-        thisSashimi = SerializationUtils.clone(newSashimi);
-        return SashimiRepository.save(thisSashimi);
     }
 
     public Sashimi buyFoods(Sashimi sashimi, int amount) {
