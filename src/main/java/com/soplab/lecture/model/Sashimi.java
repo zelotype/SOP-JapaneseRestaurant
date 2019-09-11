@@ -1,40 +1,76 @@
 package com.soplab.lecture.model;
 
-public class Sashimi extends Menu {
-    int amountOfFish;
-    String fishName;
-    int order;
+import org.hibernate.annotations.GenericGenerator;
 
-    public Sashimi (String name, double price, String foodId, int amount, int amountOfFish, String fishName) {
-        super(name, price, foodId, amount);
-        this.amountOfFish = amountOfFish;
-        this.fishName = fishName;
-        setOrder(amountOfFish);
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "Sashimi")
+public class Sashimi implements Serializable {
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private double price;
+
+    @Column(nullable = false)
+    private int amount=0;
+
+    @Column(nullable = false)
+    private String type;
+
+    @Id
+    @GeneratedValue()
+    private long id;
+
+    public Sashimi(String name, double price, int amount, String type) {
+        this.name = name;
+        this.price = price;
+        this.amount = amount;
+        this.type = type;
     }
 
     public Sashimi() {}
 
-    public int getAmountOfFish() {
-        return amountOfFish;
+    public String getName() {
+        return name;
     }
 
-    public void setAmountOfFish(int amountOfFish) {
-        this.amountOfFish = amountOfFish;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getFishName() {
-        return fishName;
+    public double getPrice() {
+        return price;
     }
 
-    public void setFishName(String fishName) {
-        this.fishName = fishName;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public int getOrder() {
-        return order;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setOrder(int amountOfFish) {
-        this.order = amountOfFish * 5;
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
