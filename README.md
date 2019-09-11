@@ -2,19 +2,19 @@
  ===
 The best sashimi restaurant in the world.
 
-##Requirement
+## Requirement
 ```
 Java 8 (JDK 1.8)
 Maven 3.5
 ```
 
-##Clone the repository
+## Clone the repository
 ```
 git clone https://github.com/zelotype/SOP-JapaneseRestaurant.git
 ```
 
-##Feature
-####<i>1. Get all menu</i> <br>
+## Feature
+#### <i>1. Get all menu</i> <br>
 <b>URL:</b> localhost:8080/sashimi/menu <br>
 <b>Method:</b> GET <br>
 <b>Request:</b> 
@@ -40,7 +40,7 @@ Nothing
     }
 ]
 ```
-####<i>2. Create menu</i> <br>
+#### <i>2. Create menu</i> <br>
 <b>URL:</b> localhost:8080/sashimi/menu/{sashimiType} <br>
 <b>Method:</b> POST <br>
 <b>Request:</b> 
@@ -64,7 +64,7 @@ Nothing
     }
 ]
 ```
-####<i>3. Get menu from ID</i> <br>
+#### <i>3. Get menu from ID</i> <br>
 <b>URL:</b> localhost:8080/sashimi/menu/{id} <br>
 <b>Method:</b> GET <br>
 <b>Request:</b> 
@@ -83,7 +83,7 @@ Nothing
     }
 ]
 ```
-####<i>4. Delete menu from ID</i> <br>
+#### <i>4. Delete menu from ID</i> <br>
 <b>URL:</b> localhost:8080/sashimi/delete/{id} <br>
 <b>Method:</b> DELETE <br>
 <b>Request:</b> 
@@ -102,7 +102,7 @@ Nothing
     }
 ]
 ```
-####<i>5. Buy food from ID</i> <br>
+#### <i>5. Buy food from ID</i> <br>
 <b>URL:</b> localhost:8080/sashimi/buy/{id} <br>
 <b>Method:</b> GET <br>
 <b>Request:</b> How many that you want to buy 
