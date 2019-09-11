@@ -14,7 +14,7 @@ git clone https://github.com/zelotype/SOP-JapaneseRestaurant.git
 ```
 
 ##Feature
-<b><i>1. Get all menu</i></b> <br>
+####<i>1. Get all menu</i> <br>
 <b>URL:</b> localhost:8080/sashimi/menu <br>
 <b>Method:</b> GET <br>
 <b>Request:</b> 
