@@ -12,8 +12,8 @@ import java.util.List;
 @Service
 public class SashimiService {
     @Autowired
-    SashimiRepository SashimiRepository;
-    SashimiFactory SashimiFactory;
+    SashimiRepository sashimiRepository;
+    SashimiFactory sashimiFactory;
     private static SashimiService instance;
 
     public static SashimiService getInstance(){
@@ -24,28 +24,28 @@ public class SashimiService {
 
 
     public List<Sashimi> getAllMenu(){
-        return SashimiRepository.findAll();
+        return sashimiRepository.findAll();
     }
 
     public Sashimi getMenu(int id) {
-        return SashimiRepository
+        return sashimiRepository
                 .findById(id)
                 .orElseThrow(() -> new RuntimeException("No such food with id"));
     }
 
     public Sashimi addMenu(Sashimi sashimi, String sashimiType) {
-        Sashimi newSashimi = SashimiFactory.getType(sashimiType);
+        Sashimi newSashimi = sashimiFactory.getType(sashimiType);
         newSashimi = SerializationUtils.clone(sashimi);
         newSashimi.setId(newSashimi.getId());
-        return SashimiRepository.save(newSashimi);
+        return sashimiRepository.save(newSashimi);
     }
 
     public void deleteMenu(int id) {
-        SashimiRepository.deleteById(id);
+        sashimiRepository.deleteById(id);
     }
 
     public Sashimi buyFoods(Sashimi sashimi, int amount) {
         sashimi.setAmount(sashimi.getAmount() - amount);
-        return SashimiRepository.save(sashimi);
+        return sashimiRepository.save(sashimi);
     }
 }
